@@ -43,6 +43,9 @@
       ],
       "types/*": [
         "src/types/*"
+      ],
+      "service/*": [
+        "src/service/*"
       ]
     }
   },

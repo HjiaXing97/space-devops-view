@@ -5,14 +5,8 @@ import { resolve } from "path";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
-  resolve: {
-    // alias: [
-    //   {
-    //     find: "@",
-    //     replacement: fileURLToPath(new URL("./src", import.meta.url))
-    //   }
-    // ],
 
+  resolve: {
     alias: {
       "@": resolve(__dirname, "src"),
       components: resolve(__dirname, "./src/components"),
@@ -22,7 +16,8 @@ export default defineConfig({
       assets: resolve(__dirname, "./src/assets"),
       router: resolve(__dirname, "./src/router"),
       types: resolve(__dirname, "./src/types"),
-      views: resolve(__dirname, "./src/views")
+      views: resolve(__dirname, "./src/views"),
+      service: resolve(__dirname, "./src/service")
     },
     extensions: ["ts", "js", "json"]
   }
