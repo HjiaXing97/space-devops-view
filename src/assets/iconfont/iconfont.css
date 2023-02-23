@@ -1,0 +1,67 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3695972 */
+  src: url('iconfont.woff2?t=1677140649614') format('woff2'),
+       url('iconfont.woff?t=1677140649614') format('woff'),
+       url('iconfont.ttf?t=1677140649614') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-jx-xinzeng:before {
+  content: "\e61a";
+}
+
+.icon-jx-arrow-left:before {
+  content: "\e602";
+}
+
+.icon-jx-W-03:before {
+  content: "\e60c";
+}
+
+.icon-jx-fangxiangyuanjiantou-xiangyou:before {
+  content: "\e617";
+}
+
+.icon-jx-fangxiangyuanjiantou-xiangzuo:before {
+  content: "\e619";
+}
+
+.icon-jx-chevronsrightshuangyoujiantou:before {
+  content: "\e6d6";
+}
+
+.icon-jx-sousuo:before {
+  content: "\e8b9";
+}
+
+.icon-jx-yonghufill:before {
+  content: "\e787";
+}
+
+.icon-jx-yonghu:before {
+  content: "\e624";
+}
+
+.icon-jx-gengduo:before {
+  content: "\e643";
+}
+
+.icon-jx-quanqiu:before {
+  content: "\e62d";
+}
+
+.icon-jx-Airbnb:before {
+  content: "\e618";
+}
+
+.icon-jx-airbnb:before {
+  content: "\ea09";
+}
+

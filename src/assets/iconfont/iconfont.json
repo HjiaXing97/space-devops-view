@@ -1,0 +1,100 @@
+{
+  "id": "3695972",
+  "name": "airbnb",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-jx-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "12875297",
+      "name": "新增",
+      "font_class": "xinzeng",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "32333080",
+      "name": "箭头-左",
+      "font_class": "arrow-left",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "32334532",
+      "name": "箭头-右",
+      "font_class": "W-03",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "7938415",
+      "name": "方向圆箭头-向右",
+      "font_class": "fangxiangyuanjiantou-xiangyou",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "7938419",
+      "name": "方向圆箭头-向左",
+      "font_class": "fangxiangyuanjiantou-xiangzuo",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "20009150",
+      "name": "chevronsright双右箭头",
+      "font_class": "chevronsrightshuangyoujiantou",
+      "unicode": "e6d6",
+      "unicode_decimal": 59094
+    },
+    {
+      "icon_id": "11372706",
+      "name": "搜索",
+      "font_class": "sousuo",
+      "unicode": "e8b9",
+      "unicode_decimal": 59577
+    },
+    {
+      "icon_id": "579740",
+      "name": "用户-fill",
+      "font_class": "yonghufill",
+      "unicode": "e787",
+      "unicode_decimal": 59271
+    },
+    {
+      "icon_id": "1304896",
+      "name": "用户",
+      "font_class": "yonghu",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
+      "icon_id": "4789373",
+      "name": "更多",
+      "font_class": "gengduo",
+      "unicode": "e643",
+      "unicode_decimal": 58947
+    },
+    {
+      "icon_id": "5203282",
+      "name": "全球",
+      "font_class": "quanqiu",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    },
+    {
+      "icon_id": "2183054",
+      "name": "Airbnb",
+      "font_class": "Airbnb",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "11983532",
+      "name": "airbnb",
+      "font_class": "airbnb",
+      "unicode": "ea09",
+      "unicode_decimal": 59913
+    }
+  ]
+}

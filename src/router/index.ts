@@ -1,12 +1,16 @@
 import type { RouteRecordRaw } from "vue-router";
 import { createRouter, createWebHashHistory } from "vue-router";
+import baseRoute from "./baseRoute.ts";
 
 const routes: RouteRecordRaw[] = [
   {
     path: "/",
     name: "Home",
-    component: () => import("views/Home/Home.vue")
-  }
+    redirect: (to) => {
+      return { path: "/customer-manage" };
+    }
+  },
+  ...baseRoute
 ];
 
 const router = createRouter({
