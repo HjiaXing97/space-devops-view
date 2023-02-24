@@ -26,5 +26,6 @@ header {
   height: calc(100% - 82px);
   margin: 8px;
   padding: 8px;
+  overflow: hidden;
 }
 </style>

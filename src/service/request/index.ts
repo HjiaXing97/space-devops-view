@@ -24,7 +24,7 @@ class JxRequest {
       this.instance
         .request(config)
         .then((res) => {
-          resolve(res);
+          resolve(res.data);
         })
         .catch((err) => {
           reject(err);

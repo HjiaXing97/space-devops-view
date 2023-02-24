@@ -49,10 +49,10 @@ import { computed, ref, toRefs, useSlots } from "vue";
 
 const props = withDefaults(
   defineProps<{
-    header: boolean; //是否显示头部
+    header?: boolean; //是否显示头部
     title?: string; //标题
     subTitle?: string; //副标题
-    back: boolean | (() => void); //返回函数
+    back?: boolean | (() => void); //返回函数
     AddFn?: () => void; //新增函数
     EditFn?: () => void; //编辑函数
     DeleteFn?: () => void; //删除函数
@@ -144,8 +144,9 @@ const handleCancel = async () => {
 }
 
 .space_panel_main {
-  flex: 1;
   margin-bottom: 50px;
+  padding: 8px;
+  flex: 1;
 }
 
 .space_panel_footer {
