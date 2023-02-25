@@ -1,10 +1,25 @@
 <template>
-  <SpaceSearch :form="searchForm" @reset="reset" @search="search">
+  <SpaceSearch
+    :form="searchForm"
+    :search-props="searchProps"
+    @reset="reset"
+    @search="search"
+  >
     <template v-slot>
       <slot name="search"></slot>
     </template>
+    <template v-slot:right>
+      <slot name="searchBtn"></slot>
+    </template>
   </SpaceSearch>
-  <el-table :data="data" border style="width: 100%">
+
+  <el-table
+    :data="data"
+    border
+    header-cell-class-name="header-row"
+    size="small"
+    style="width: 100%"
+  >
     <el-table-column
       v-if="tableIndex"
       :label="indexLabel"
@@ -62,6 +77,15 @@ export interface IColumnProps {
   [key: string]: any;
 }
 
+interface ISearchProps {
+  add?: boolean;
+  addText?: string;
+  reset?: boolean;
+  resetText?: string;
+  search?: boolean;
+  searchText?: string;
+}
+
 const emit = defineEmits(["search", "reset"]);
 
 const props = withDefaults(
@@ -75,13 +99,22 @@ const props = withDefaults(
     indexLabel?: string; //索引列表头
     columnAfterWidth?: number; //操作列宽度
     isColumnAfter?: boolean; // 是否展示操作列
+    searchProps?: ISearchProps;
   }>(),
   {
     searchForm: () => ({}),
     tableIndex: true,
     indexLabel: "序号",
     columnAfterWidth: 100,
-    isColumnAfter: true
+    isColumnAfter: true,
+    searchProps: () => ({
+      add: true,
+      addText: "新 增",
+      reset: true,
+      resetText: "重 置",
+      search: false,
+      searchText: "搜 索"
+    })
   }
 );
 
@@ -133,4 +166,18 @@ const getData = () => {
 };
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped>
+.table-header-handle {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.el-table :deep(.header-row) {
+  background: #fafafa !important;
+}
+
+.el-table :deep(.cell) {
+  line-height: 32px !important;
+}
+</style>

@@ -1,33 +1,71 @@
 <template>
   <el-form :model="form" class="search_form" inline>
-    <slot></slot>
-    <el-form-item>
-      <el-button type="primary" @click="search">搜索</el-button>
-      <el-button @click="reset">重置</el-button>
-    </el-form-item>
+    <div class="g-left">
+      <slot></slot>
+      <el-form-item>
+        <el-button v-if="search" type="primary" @click="searchHandle">
+          {{ searchText }}
+        </el-button>
+        <el-button v-if="reset" @click="resetHandle">
+          {{ resetText }}
+        </el-button>
+      </el-form-item>
+    </div>
+    <div class="g-right">
+      <el-form-item style="margin-right: 0px">
+        <slot name="right"></slot>
+        <el-button v-if="add" type="primary">
+          <template v-slot:icon>
+            <i class="iconfont icon-jx-xinzeng"></i>
+          </template>
+          {{ addText }}
+        </el-button>
+      </el-form-item>
+    </div>
   </el-form>
 </template>
 
 <script lang="ts" setup>
 import { defineProps, toRefs } from "vue";
 
+interface ISearchProps {
+  add?: boolean;
+  addText?: string;
+  reset?: boolean;
+  resetText?: string;
+  search?: boolean;
+  searchText?: string;
+}
+
 const emit = defineEmits(["search", "reset"]);
 
 const props = defineProps<{
   form?: object;
+  searchProps: ISearchProps;
 }>();
-const { form } = toRefs(props);
+const { form, searchProps } = toRefs(props);
+const { add, addText, reset, resetText, search, searchText } = toRefs(
+  searchProps.value
+);
 
-const search = () => {
+const searchHandle = () => {
   emit("search");
 };
-const reset = () => {
+const resetHandle = () => {
   emit("reset");
 };
 </script>
 
 <style lang="scss" scoped>
 .search_form {
-  margin-top: 24px;
+  margin: 24px 0;
+  display: flex;
+}
+
+.g-left {
+  margin-right: auto;
+}
+
+.el-button :deep(.el-icon) {
 }
 </style>

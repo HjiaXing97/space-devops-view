@@ -1,6 +1,11 @@
 :root {
-    /*--el-menu-bg-color: #466284;*/
-    /*--el-menu-text-color: #dde1e6;*/
-    /*--el-menu-active-color: #edf2f8;*/
-    /*--el-menu-hover-bg-color: #2e4a6c*/
+    --el-color-primary: #4F7AFF;
+    --el-border-radius-base: 2px;
 }
+
+.el-button {
+    padding: 8px 12px;
+    height: 30px;
+    font-size: 12px;
+}
+

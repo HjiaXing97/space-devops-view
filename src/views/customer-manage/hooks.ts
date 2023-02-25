@@ -58,9 +58,7 @@ function useColumnProps(): IColumnProps[] {
     {
       label: "升级内容",
       prop: "upgradeContent",
-      attrs: {
-        fixed: "right"
-      }
+      attrs: {}
     }
   ];
 }

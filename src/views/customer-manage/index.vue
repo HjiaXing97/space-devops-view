@@ -10,6 +10,9 @@
           <el-input v-model="searchForm.versionName" placeholder="请输入" />
         </el-form-item>
       </template>
+      <template v-slot:searchBtn>
+        <el-button>导 出</el-button>
+      </template>
       <template v-slot:columnAfter="{ row, $index }">
         <el-button link type="primary" @click="deleteRow(row, $index)">
           删除
