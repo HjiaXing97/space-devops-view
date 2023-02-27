@@ -3,7 +3,7 @@
     <SpaceMenu />
   </div>
   <div :style="{ width: `calc(100% - ${sidebar}px)` }" class="count">
-    <header>header</header>
+    <header></header>
     <div class="router-view">
       <router-view></router-view>
     </div>

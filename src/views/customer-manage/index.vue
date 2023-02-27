@@ -19,6 +19,7 @@
         </el-button>
       </template>
     </SpaceTable>
+    <template v-slot:footer></template>
   </SpacePanel>
 </template>
 

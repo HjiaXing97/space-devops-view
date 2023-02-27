@@ -1,8 +1,8 @@
 <template>
   <el-menu
     :router="true"
-    active-text-color="#ffd04b"
-    background-color="#545c64"
+    active-text-color="#fff"
+    background-color="#466284"
     class="space_menu"
     default-active="/customer-manage"
     text-color="#fff"

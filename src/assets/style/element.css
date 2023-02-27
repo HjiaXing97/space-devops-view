@@ -1,11 +1,17 @@
 :root {
     --el-color-primary: #4F7AFF;
     --el-border-radius-base: 2px;
+    --el-component-size: 30px;
+    --el-font-size-base: 12px;
 }
 
 .el-button {
     padding: 8px 12px;
     height: 30px;
     font-size: 12px;
+}
+
+.el-input__inner {
+    border-radius: 2px;
 }
 

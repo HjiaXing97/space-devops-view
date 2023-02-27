@@ -20,6 +20,13 @@
       </div>
     </div>
     <div class="space_panel_main">
+      <div
+        v-if="$slots.sidebar"
+        :style="{ minWidth: sidebarWidth }"
+        class="m-panel-sidebar"
+      >
+        <slot name="sidebarWidth"></slot>
+      </div>
       <div class="m-panel-content">
         <slot />
       </div>
@@ -58,10 +65,12 @@ const props = withDefaults(
     DeleteFn?: () => void; //删除函数
     submit?: () => void; //提交函数
     cancel?: () => void; //取消函数
+    sidebarWidth?: string;
   }>(),
   {
     header: true,
-    back: false
+    back: false,
+    sidebarWidth: "250px"
   }
 );
 
@@ -76,7 +85,8 @@ const {
   EditFn,
   DeleteFn,
   submit,
-  cancel
+  cancel,
+  sidebarWidth
 } = toRefs(props);
 
 const hasFooter = computed(() => {
@@ -102,6 +112,7 @@ const handleCancel = async () => {
 </script>
 
 <style lang="scss" scoped>
+$minWidth: v-bind(sidebarWidth);
 .space_panel {
   background-color: #fff;
   border-radius: 2px;
@@ -144,9 +155,30 @@ const handleCancel = async () => {
 }
 
 .space_panel_main {
-  margin-bottom: 50px;
-  padding: 8px;
+  padding: 0 8px;
   flex: 1;
+  display: flex;
+  flex-wrap: nowrap;
+
+  .m-panel-sidebar {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: "";
+      top: 0;
+      height: 100%;
+      background: #e9e9e9;
+      width: 1px;
+      left: $minWidth;
+    }
+  }
+
+  .m-panel-content {
+    padding: 0 20px;
+    flex: 1;
+    width: calc(100% - $minWidth);
+  }
 }
 
 .space_panel_footer {
