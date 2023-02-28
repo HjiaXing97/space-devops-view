@@ -3,11 +3,11 @@
     <template v-for="item in formProps" :key="item.prop">
       <el-form-item :label="item.label" :prop="item.prop">
         <template v-slot:label>
-          <slot :name="item.label + 'label'">
+          <slot :name="item.prop + 'Label'">
             <span>{{ item.label }}</span>
           </slot>
         </template>
-        <slot>
+        <slot :name="item.prop + 'Prop'">
           <component
             :is="config.get(item.components)"
             v-model="formModel[item.prop]"
@@ -22,7 +22,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
+import { ref, toRefs } from "vue";
 import config from "package/SpaceForm/config.ts";
 
 interface IFormProp {
@@ -30,17 +30,16 @@ interface IFormProp {
   prop: string;
   components: string;
   formHidden?: boolean;
-  value?: any;
 }
 
-const formProps = ref<IFormProp[]>([
-  {
-    label: "公司简称",
-    prop: "companyAbbreviation",
-    components: "input",
-    value: ""
-  }
-]);
+const props = withDefaults(
+  defineProps<{
+    formProps: IFormProp[];
+  }>(),
+  {}
+);
+
+const { formProps } = toRefs(props);
 
 const formModel = ref({});
 
