@@ -65,7 +65,7 @@ const props = withDefaults(
     DeleteFn?: () => void; //删除函数
     submit?: () => void; //提交函数
     cancel?: () => void; //取消函数
-    sidebarWidth?: string;
+    sidebarWidth?: string; //sidebar宽度
   }>(),
   {
     header: true,

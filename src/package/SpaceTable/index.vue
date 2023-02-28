@@ -19,6 +19,7 @@
     header-cell-class-name="header-row"
     size="small"
     style="width: 100%"
+    v-bind="{ ...attr }"
   >
     <el-table-column
       v-if="tableIndex"
@@ -99,7 +100,8 @@ const props = withDefaults(
     indexLabel?: string; //索引列表头
     columnAfterWidth?: number; //操作列宽度
     isColumnAfter?: boolean; // 是否展示操作列
-    searchProps?: ISearchProps;
+    searchProps?: ISearchProps; //查询配置
+    attr?: any; //表格的其他配置
   }>(),
   {
     searchForm: () => ({}),
@@ -118,7 +120,7 @@ const props = withDefaults(
   }
 );
 
-const { tableProps, columnProps, tableDate, action, searchForm } =
+const { tableProps, columnProps, tableDate, action, searchForm, attr } =
   toRefs(props);
 
 const dataList = ref([]);

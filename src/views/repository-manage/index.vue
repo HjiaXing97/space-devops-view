@@ -1,7 +1,9 @@
 <template>
-  <div>$END$</div>
+  <SpaceForm></SpaceForm>
 </template>
 
-<script setup></script>
+<script lang="ts" setup>
+import SpaceForm from "package/SpaceForm/SpaceForm.vue";
+</script>
 
 <style scoped></style>
