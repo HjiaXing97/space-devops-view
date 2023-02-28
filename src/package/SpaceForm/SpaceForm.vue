@@ -1,5 +1,5 @@
 <template>
-  <el-form ref="elFormRef" :model="formModel">
+  <el-form ref="formRef" :model="formModel">
     <template v-for="item in formProps" :key="item.prop">
       <el-form-item :label="item.label" :prop="item.prop">
         <template v-slot:label>
@@ -24,6 +24,7 @@
 <script lang="ts" setup>
 import { ref, toRefs } from "vue";
 import config from "package/SpaceForm/config.ts";
+import type { FormInstance } from "element-plus";
 
 interface IFormProp {
   label: string;
@@ -42,6 +43,7 @@ const props = withDefaults(
 const { formProps } = toRefs(props);
 
 const formModel = ref({});
+const formRef = ref<FormInstance>();
 
 const getFormModel = () => {
   console.log(formModel.value);
