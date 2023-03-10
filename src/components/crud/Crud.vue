@@ -16,7 +16,7 @@
 </template>
 
 <script lang="ts" setup>
-import SpaceTable from "package/SpaceTable/index.vue";
+import SpaceTable from "package/SpaceTable/SpaceTable.vue";
 import { onMounted, ref, toRefs } from "vue";
 import useGetList from "./hooks/useGetList.ts";
 

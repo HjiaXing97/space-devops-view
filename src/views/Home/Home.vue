@@ -1,5 +1,5 @@
 <template>
-  <div :style="{ width: `${sidebar}px` }" class="sidebar">
+  <div v-if="!isHiddenMenu" :style="{ width: `${sidebar}px` }" class="sidebar">
     <SpaceMenu />
   </div>
   <div :style="{ width: `calc(100% - ${sidebar}px)` }" class="count">
@@ -12,8 +12,10 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 import SpaceMenu from "package/SpaceMenu/index.vue";
+import useHiddenMenu from "./hooks/useHiddenMenu.ts";
 
 const sidebar = ref("240");
+const isHiddenMenu = useHiddenMenu();
 </script>
 
 <style lang="scss" scoped>
